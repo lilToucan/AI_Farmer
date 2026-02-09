@@ -25,4 +25,5 @@ public:
 	APlantGrid* GetGrid() const { return GridActor; }
 	UFUNCTION(BlueprintCallable)
 	void SetGrid(APlantGrid* Grid);
+
 };

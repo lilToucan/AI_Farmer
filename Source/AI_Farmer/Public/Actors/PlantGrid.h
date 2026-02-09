@@ -8,7 +8,6 @@ USTRUCT()
 struct FGridLocation
 {
 	GENERATED_BODY()
-	FVector Position;
 	bool bHasSeed = false;
 	bool bPlantHasGrown = false;
 };
@@ -21,10 +20,12 @@ class AI_FARMER_API APlantGrid : public AActor
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="PlantGrid")
 	FIntVector2 GridSize;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="PlantGrid")
+	float GridSpacing;
 
 protected:
-	TArray<FGridLocation> GridLocations;
-	
+	TMap<FVector,FGridLocation> GridLocations;
+
 public:
 	APlantGrid();
 
